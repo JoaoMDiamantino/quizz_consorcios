@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "PowerShell(npm *)",
+      "PowerShell(winget install *)",
+      "PowerShell(Set-ExecutionPolicy *)",
+      "PowerShell(npm create *)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz\"; \"y\" | npx create-vite@latest . --template react-ts 2>&1)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz\"; npx create-vite@latest _tmp_quiz --template react-ts 2>&1)",
+      "PowerShell(npm install *)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz\"; npx tailwindcss init -p 2>&1)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz\"; npx tsc --noEmit 2>&1)",
+      "PowerShell($env:PATH = [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"Machine\"\\) + \";\" + [System.Environment]::GetEnvironmentVariable\\(\"PATH\",\"User\"\\); Set-Location \"C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz\"; Start-Process powershell -ArgumentList \"-NoProfile -Command `\"cd 'C:\\\\Users\\\\joao.victor\\\\OneDrive - Garantti\\\\1.Projetos\\\\Claude Quizz'; `$env:PATH = [System.Environment]::GetEnvironmentVariable\\('PATH','Machine'\\) + ';' + [System.Environment]::GetEnvironmentVariable\\('PATH','User'\\); npm run dev`\"\"; Start-Sleep -Seconds 4; Write-Host \"Dev server launched in background window\")",
+      "PowerShell(npm run *)",
+      "PowerShell(Out-Null *)",
+      "Bash(node -e ' *)",
+      "Bash(npm run *)",
+      "Bash(npx tsc *)",
+      "Bash(git add *)"
+    ]
+  }
+}
