@@ -26,7 +26,7 @@ export default function App() {
   return (
     <>
       {screen === 'start' && (
-        <StartScreen onStart={handleStart} />
+        <StartScreen onStart={handleStart} onVerRanking={() => setScreen('ranking')} />
       )}
 
       {screen === 'quiz' && quiz.currentQuestion && (

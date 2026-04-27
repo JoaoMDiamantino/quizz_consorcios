@@ -3,9 +3,10 @@ import { motion } from 'framer-motion'
 
 interface StartScreenProps {
   onStart: (apelido: string) => void
+  onVerRanking: () => void
 }
 
-export function StartScreen({ onStart }: StartScreenProps) {
+export function StartScreen({ onStart, onVerRanking }: StartScreenProps) {
   const [apelido, setApelido] = useState('')
   const [error, setError] = useState('')
 
@@ -78,7 +79,15 @@ export function StartScreen({ onStart }: StartScreenProps) {
             </motion.button>
           </form>
 
-          <p className="text-center text-gray-400 text-xs mt-6">
+          <button
+            onClick={onVerRanking}
+            className="mt-4 w-full text-blue-600 font-semibold text-sm py-2 rounded-xl
+                       hover:bg-blue-50 transition-colors duration-200"
+          >
+            🏆 Ver Ranking
+          </button>
+
+          <p className="text-center text-gray-400 text-xs mt-4">
             Conteúdo educativo sobre consórcios imobiliários
           </p>
         </div>
