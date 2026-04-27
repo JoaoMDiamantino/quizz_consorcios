@@ -9,6 +9,7 @@ import { RankingScreen } from './components/RankingScreen'
 export default function App() {
   const [screen, setScreen]   = useState<Screen>('start')
   const [apelido, setApelido] = useState('')
+  const [email, setEmail]     = useState('')
   const quiz = useQuiz()
 
   useEffect(() => {
@@ -17,8 +18,9 @@ export default function App() {
     }
   }, [quiz.isFinished, screen])
 
-  function handleStart(nick: string) {
+  function handleStart(nick: string, mail: string) {
     setApelido(nick)
+    setEmail(mail)
     quiz.reiniciar()
     setScreen('quiz')
   }
@@ -46,6 +48,7 @@ export default function App() {
       {screen === 'result' && (
         <ResultScreen
           apelido={apelido}
+          email={email}
           score={quiz.score}
           total={quiz.totalQuestions}
           titulo={quiz.titulo}

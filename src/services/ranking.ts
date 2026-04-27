@@ -11,11 +11,12 @@ export interface ScoreRow {
 export async function salvarScore(
   apelido: string,
   pontuacao: number,
-  titulo: string
+  titulo: string,
+  email: string
 ): Promise<void> {
   const { error } = await supabase
     .from('scores')
-    .insert({ apelido, pontuacao, titulo })
+    .insert({ apelido, pontuacao, titulo, email })
   if (error) throw error
 }
 

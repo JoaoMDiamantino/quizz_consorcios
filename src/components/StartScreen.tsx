@@ -2,26 +2,37 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 interface StartScreenProps {
-  onStart: (apelido: string) => void
+  onStart: (apelido: string, email: string) => void
   onVerRanking: () => void
 }
 
 export function StartScreen({ onStart, onVerRanking }: StartScreenProps) {
   const [apelido, setApelido] = useState('')
-  const [error, setError] = useState('')
+  const [email, setEmail]     = useState('')
+  const [apelidoError, setApelidoError] = useState('')
+  const [emailError, setEmailError]     = useState('')
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    const trimmed = apelido.trim()
-    if (trimmed.length < 2) {
-      setError('Digite um apelido com pelo menos 2 caracteres.')
-      return
+    const trimmedApelido = apelido.trim()
+    const trimmedEmail   = email.trim()
+    let valid = true
+
+    if (trimmedApelido.length < 2) {
+      setApelidoError('Digite um apelido com pelo menos 2 caracteres.')
+      valid = false
+    } else if (trimmedApelido.length > 30) {
+      setApelidoError('Apelido deve ter no máximo 30 caracteres.')
+      valid = false
     }
-    if (trimmed.length > 30) {
-      setError('Apelido deve ter no máximo 30 caracteres.')
-      return
+
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setEmailError('Digite um e-mail válido.')
+      valid = false
     }
-    onStart(trimmed)
+
+    if (!valid) return
+    onStart(trimmedApelido, trimmedEmail)
   }
 
   return (
@@ -57,15 +68,35 @@ export function StartScreen({ onStart, onVerRanking }: StartScreenProps) {
               id="apelido"
               type="text"
               value={apelido}
-              onChange={e => { setApelido(e.target.value); setError('') }}
+              onChange={e => { setApelido(e.target.value); setApelidoError('') }}
               placeholder="Ex: JoãoInvestidor"
               maxLength={30}
               className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-900
                          placeholder-gray-400 focus:outline-none focus:border-blue-500
                          transition-colors duration-200 bg-gray-50"
             />
-            {error && (
-              <p className="text-error text-xs mt-2">{error}</p>
+            {apelidoError && (
+              <p className="text-error text-xs mt-2">{apelidoError}</p>
+            )}
+
+            <label
+              htmlFor="email"
+              className="block text-sm font-semibold text-gray-700 mt-4 mb-2"
+            >
+              Seu e-mail
+            </label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={e => { setEmail(e.target.value); setEmailError('') }}
+              placeholder="Ex: joao@email.com"
+              className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 text-gray-900
+                         placeholder-gray-400 focus:outline-none focus:border-blue-500
+                         transition-colors duration-200 bg-gray-50"
+            />
+            {emailError && (
+              <p className="text-error text-xs mt-2">{emailError}</p>
             )}
 
             <motion.button

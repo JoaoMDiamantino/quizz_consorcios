@@ -5,6 +5,7 @@ import { salvarScore } from '../services/ranking'
 
 interface ResultScreenProps {
   apelido: string
+  email: string
   score: number
   total: number
   titulo: Titulo
@@ -29,6 +30,7 @@ function getRingColor(score: number, total: number): string {
 
 export function ResultScreen({
   apelido,
+  email,
   score,
   total,
   titulo,
@@ -40,7 +42,7 @@ export function ResultScreen({
 
   useEffect(() => {
     let cancelled = false
-    salvarScore(apelido, score, titulo)
+    salvarScore(apelido, score, titulo, email)
       .then(() => { if (!cancelled) setSaved(true) })
       .catch(() => { if (!cancelled) setError('Não foi possível salvar sua pontuação.') })
     return () => { cancelled = true }
