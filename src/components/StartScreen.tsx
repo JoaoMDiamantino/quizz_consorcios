@@ -35,7 +35,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
 
         <div className="p-8">
           <div className="flex justify-center mb-8">
-            <img src="/logo-confiax.svg" alt="Confiax" className="h-14" />
+            <img src="/logo-confiax.png" alt="Confiax" className="h-20" />
           </div>
 
           <h1 className="text-3xl font-extrabold text-center text-gray-900 mb-2 leading-tight">

@@ -45,7 +45,7 @@ export function RankingScreen({ apelidoAtual, onReiniciar }: RankingScreenProps)
         <div className="h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600" />
 
         <div className="p-6">
-          <img src="/logo-confiax.svg" alt="Confiax" className="h-10 mx-auto mb-4" />
+          <img src="/logo-confiax.png" alt="Confiax" className="h-16 mx-auto mb-4" />
           <h2 className="text-xl font-extrabold text-center text-gray-900 mb-1">
             🏆 Ranking Top 10
           </h2>

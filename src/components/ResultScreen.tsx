@@ -64,7 +64,7 @@ export function ResultScreen({
         <div className="h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600" />
 
         <div className="p-8 text-center">
-          <img src="/logo-confiax.svg" alt="Confiax" className="h-10 mx-auto mb-6" />
+          <img src="/logo-confiax.png" alt="Confiax" className="h-16 mx-auto mb-6" />
 
           <div className="text-4xl mb-4">{emoji}</div>
 

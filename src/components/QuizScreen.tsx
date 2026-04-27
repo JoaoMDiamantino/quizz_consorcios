@@ -67,7 +67,7 @@ export function QuizScreen({
             >
               {NIVEL_LABEL[question.nivel]}
             </span>
-            <img src="/logo-confiax.svg" alt="Confiax" className="h-6" />
+            <img src="/logo-confiax.png" alt="Confiax" className="h-9" />
           </div>
 
           <p className="text-gray-900 font-semibold text-lg leading-snug mb-6">
